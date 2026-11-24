@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PEELO photography registry</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FBF8F4;color:#141414;font-family:Inter,system-ui,sans-serif}
+.rg{display:grid;grid-template-columns:56px 1.2fr .9fr .9fr .9fr 2.2fr .9fr 1.3fr .6fr;gap:12px;padding:10px 0;border-bottom:1px solid rgba(20,20,20,0.1);font-size:13px;line-height:1.45}
+.hd{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#55524E;font-weight:500}
+</style>
+</helmet>
+<div style="padding: 56px clamp(18px, 4vw, 56px); max-width: 1440px; margin: 0 auto; box-sizing: border-box">
+<p style="margin: 0 0 10px; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #55524E">PEELO · asset integrity</p>
+<h1 style="margin: 0; font-family: Outfit, Inter, sans-serif; font-weight: 600; letter-spacing: -0.04em; font-size: 56px; line-height: 1">Photography registry</h1>
+<p style="margin: 14px 0 0; max-width: 760px; font-size: 15px; line-height: 1.6; color: #3d3a37">Every uploaded photograph, the flavor printed on its can, where it is used and why anything was left out. Flavor is assigned by the label text, not by colour alone. A = campaign, B = product, C = shared, D = excluded.</p>
+<div style="margin-top: 28px; overflow-x: auto">
+<div role="table" aria-label="Photography registry" style="min-width: 1080px">
+<div role="row" class="rg" style="border-bottom: 1px solid rgba(20,20,20,0.25)"><span role="columnheader" class="hd">Image</span><span role="columnheader" class="hd">Original file</span><span role="columnheader" class="hd">Flavor</span><span role="columnheader" class="hd">Category</span><span role="columnheader" class="hd">Page</span><span role="columnheader" class="hd">Section</span><span role="columnheader" class="hd">Orientation</span><span role="columnheader" class="hd">Responsive crop</span><span role="columnheader" class="hd">Shared</span></div>
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="29">
+<div role="row" class="rg">
+<span role="cell"><sc-if value="{{ r.hasThumb }}" hint-placeholder-val="{{ true }}"><img src="{{ r.thumb }}" alt="" loading="lazy" style="width: 44px; height: 55px; object-fit: cover; display: block"></sc-if></span>
+<span role="cell" style="font-weight: 600">{{ r.file }}</span><span role="cell">{{ r.flavor }}</span><span role="cell">{{ r.cat }}</span><span role="cell">{{ r.page }}</span><span role="cell">{{ r.section }}</span><span role="cell">{{ r.orient }}</span><span role="cell">{{ r.crops }}</span><span role="cell">{{ r.shared }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<h2 style="margin: 40px 0 10px; font-family: Outfit, Inter, sans-serif; font-weight: 500; letter-spacing: -0.03em; font-size: 28px">Missing or to confirm</h2>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.8; color: #3d3a37">
+<li>Clean upright studio shots of Mango and Raspberry (their galleries open on the floating can instead).</li>
+<li>A Purple Grape shot for the rock series in Campaign Ch02 (the supplied one carries a lime label).</li>
+<li>Splash photography for Peach, Lime, Grape and Mango (only Raspberry exists).</li>
+<li>Can volume, shown as a placeholder, and real pricing (₦1,800 is illustrative).</li>
+<li>A vector logo from the original design file (the current one is traced from packaging).</li>
+<li>Known small artifacts in used images: an odd glyph between COLD-PRESSED and MANGO on 96203, 96198 and 95328; garbled small text on background cans in 96159.</li>
+</ul>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1700}}'>
+var ROWS = [
+{
+"file": "95321.jpg",
+"flavor": "White Peach",
+"cat": "B · Product",
+"page": "Products",
+"section": "Peach gallery 1 (primary). Upright cutout also drives the Home hero can",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/7079989e86dacdcd0ad04e3c35fa88cb.webp",
+"hasThumb": true
+},
+{
+"file": "96195.jpg",
+"flavor": "White Peach",
+"cat": "B · Product",
+"page": "Products",
+"section": "Peach gallery 2",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/5a50bfa00fa438272966e96c2681e922.webp",
+"hasThumb": true
+},
+{
+"file": "96204.jpg",
+"flavor": "White Peach",
+"cat": "B · Product",
+"page": "Products",
+"section": "Peach gallery 3. Cutout used in flavor selectors and Weightless band",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover; cutout",
+"shared": "Cutout only",
+"thumb": "./assets/526e206943171a689942b0996e1c5699.webp",
+"hasThumb": true
+},
+{
+"file": "95330.jpg",
+"flavor": "White Peach",
+"cat": "A · Campaign",
+"page": "Campaign",
+"section": "Ch02 The flavors",
+"orient": "Portrait 4:5",
+"crops": "4:5 masked reveal, parallax",
+"shared": "No",
+"thumb": "./assets/8330c7370a2e9111975974032144bce1.webp",
+"hasThumb": true
+},
+{
+"file": "95318.png",
+"flavor": "Lime Zest",
+"cat": "B · Product",
+"page": "Products",
+"section": "Lime gallery 1 (primary). Grey backdrop extended to 4:5, can untouched. Upright cutout drives Home section 02",
+"orient": "Portrait (narrow)",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/90009776832af6d628cf0773ed365cc3.webp",
+"hasThumb": true
+},
+{
+"file": "95387.jpg",
+"flavor": "Lime Zest",
+"cat": "C · Shared",
+"page": "Products, Campaign",
+"section": "Lime gallery 2; Ch03 The details",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover",
+"shared": "Yes",
+"thumb": "./assets/e1ea2fa68fc60b66ecac4323f43c4fa0.webp",
+"hasThumb": true
+},
+{
+"file": "96151.jpg",
+"flavor": "Lime Zest",
+"cat": "B · Product",
+"page": "Products",
+"section": "Lime gallery 3",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/bd4bb5be1060d3feed3c21f5c018dfcf.webp",
+"hasThumb": true
+},
+{
+"file": "96201.jpg",
+"flavor": "Lime Zest",
+"cat": "B · Product",
+"page": "Products",
+"section": "Lime gallery 4. Cutout used in selectors and Weightless band",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover; cutout",
+"shared": "Cutout only",
+"thumb": "./assets/f4835ef6937d8d13a2d6ee0497d313e5.webp",
+"hasThumb": true
+},
+{
+"file": "95324.jpg",
+"flavor": "Lime Zest",
+"cat": "A · Campaign",
+"page": "Campaign",
+"section": "Ch02 The flavors",
+"orient": "Portrait 4:5",
+"crops": "4:5 masked reveal, parallax",
+"shared": "No",
+"thumb": "./assets/9f80522a7cc5d8c820dce0097d2af406.webp",
+"hasThumb": true
+},
+{
+"file": "96156.jpg",
+"flavor": "Lime Zest",
+"cat": "A · Campaign",
+"page": "Campaign",
+"section": "Ch03 full-screen opener",
+"orient": "Portrait 4:5",
+"crops": "Full viewport cover, focus 50% 40%",
+"shared": "No",
+"thumb": "./assets/e86622974fa84009eb47237e4ac88e72.webp",
+"hasThumb": true
+},
+{
+"file": "95322.jpg",
+"flavor": "Purple Grape",
+"cat": "B · Product",
+"page": "Products",
+"section": "Grape gallery 1 (primary). Upright cutout drives Home section 03",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/1912c0f734ea42c6ff40e2c308f1ac36.webp",
+"hasThumb": true
+},
+{
+"file": "96197.jpg",
+"flavor": "Purple Grape",
+"cat": "B · Product",
+"page": "Products",
+"section": "Grape gallery 2",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/87d013303b1a8311d37068067f49a8f6.webp",
+"hasThumb": true
+},
+{
+"file": "96152.jpg",
+"flavor": "Purple Grape",
+"cat": "C · Shared",
+"page": "Products, Campaign",
+"section": "Grape gallery 3; Ch04 The feeling",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover",
+"shared": "Yes",
+"thumb": "./assets/065c3cdb38489d175aa78c9766801adb.webp",
+"hasThumb": true
+},
+{
+"file": "96205.jpg",
+"flavor": "Purple Grape",
+"cat": "B · Product",
+"page": "Products",
+"section": "Grape gallery 4. Cutout used in selectors",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover; cutout",
+"shared": "Cutout only",
+"thumb": "./assets/0495287186379df13a84946c847ce002.webp",
+"hasThumb": true
+},
+{
+"file": "96203.jpg",
+"flavor": "Mango",
+"cat": "B · Product",
+"page": "Products",
+"section": "Mango gallery 1 (primary; no clean studio mango exists). Cutout used in selectors",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover; cutout",
+"shared": "Cutout only",
+"thumb": "./assets/7d5bf21bf46608d0438f1668a2c4701a.webp",
+"hasThumb": true
+},
+{
+"file": "96198.jpg",
+"flavor": "Mango",
+"cat": "B · Product",
+"page": "Products",
+"section": "Mango gallery 2",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/1b35a1e03a446736142026602a85b667.webp",
+"hasThumb": true
+},
+{
+"file": "96157.jpg",
+"flavor": "Mango",
+"cat": "C · Shared",
+"page": "Products, Campaign",
+"section": "Mango gallery 3; Ch03 The details",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover",
+"shared": "Yes",
+"thumb": "./assets/d906695841935d55cda3b6ba31a7f071.webp",
+"hasThumb": true
+},
+{
+"file": "95328.jpg",
+"flavor": "Mango",
+"cat": "A · Campaign",
+"page": "Campaign",
+"section": "Ch02 The flavors",
+"orient": "Portrait 4:5",
+"crops": "4:5 masked reveal, parallax",
+"shared": "No",
+"thumb": "./assets/082fa775028c93402b2d5ff8627fd357.webp",
+"hasThumb": true
+},
+{
+"file": "96202.jpg",
+"flavor": "Raspberry",
+"cat": "B · Product",
+"page": "Products",
+"section": "Raspberry gallery 1 (primary; no studio raspberry exists). Cutout used in selectors and Weightless band",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover; cutout",
+"shared": "Cutout only",
+"thumb": "./assets/407a6fac9d99d1d355365ca96f4b2dc8.webp",
+"hasThumb": true
+},
+{
+"file": "96199.jpg",
+"flavor": "Raspberry",
+"cat": "B · Product",
+"page": "Products",
+"section": "Raspberry gallery 2",
+"orient": "Portrait 4:5",
+"crops": "4:5 frame, cover",
+"shared": "No",
+"thumb": "./assets/130dfa934d0dd712e69fe1c3c34ec89a.webp",
+"hasThumb": true
+},
+{
+"file": "95326.jpg",
+"flavor": "Raspberry",
+"cat": "C · Shared",
+"page": "Products, Campaign",
+"section": "Raspberry gallery 3; Ch02 The flavors",
+"orient": "Portrait 4:5",
+"crops": "4:5 cover",
+"shared": "Yes",
+"thumb": "./assets/8c34dfe786274e5fc41b4c7865d1edea.webp",
+"hasThumb": true
+},
+{
+"file": "Splash (earlier project upload)",
+"flavor": "Raspberry",
+"cat": "C · Shared",
+"page": "Home, Campaign",
+"section": "Home: 27-layer splash parallax. Campaign: Ch01 opener",
+"orient": "Landscape 16:9",
+"crops": "Desktop cover; phone 215vw centred on can",
+"shared": "Yes",
+"thumb": "./assets/5b53f05d51a6ad8f7420c3559354cd2a.webp",
+"hasThumb": true
+},
+{
+"file": "96159.jpg",
+"flavor": "All five",
+"cat": "A · Campaign",
+"page": "Campaign",
+"section": "Ch05 The collection",
+"orient": "Portrait 4:5",
+"crops": "4:5 masked reveal",
+"shared": "No",
+"thumb": "./assets/f30940050dcb443af43eec591d529d45.webp",
+"hasThumb": true
+},
+{
+"file": "96196.jpg",
+"flavor": "Lime Zest",
+"cat": "D · Excluded",
+"page": "None",
+"section": "Label reads BOTANICAL-WATER (hyphen typo)",
+"orient": "Portrait",
+"crops": "",
+"shared": "",
+"thumb": "",
+"hasThumb": false
+},
+{
+"file": "95320.jpg",
+"flavor": "Mango",
+"cat": "D · Excluded",
+"page": "None",
+"section": "Label text scrambled",
+"orient": "Portrait",
+"crops": "",
+"shared": "",
+"thumb": "",
+"hasThumb": false
+},
+{
+"file": "96200.jpg",
+"flavor": "All five",
+"cat": "D · Excluded",
+"page": "None",
+"section": "White Peach can rendered pink, clashing with Raspberry",
+"orient": "Portrait",
+"crops": "",
+"shared": "",
+"thumb": "",
+"hasThumb": false
+},
+{
+"file": "95327.jpg",
+"flavor": "Purple can",
+"cat": "D · Excluded",
+"page": "None",
+"section": "Purple can carries a lime label: COLD-PRESSED LINE ZEST",
+"orient": "Portrait",
+"crops": "",
+"shared": "",
+"thumb": "",
+"hasThumb": false
+},
+{
+"file": "96155.jpg",
+"flavor": "Mango",
+"cat": "D · Excluded",
+"page": "None",
+"section": "Strong lifestyle image, but label text is scrambled. Worth regenerating",
+"orient": "Portrait",
+"crops": "",
+"shared": "",
+"thumb": "",
+"hasThumb": false
+},
+{
+"file": "96159, 96157, 96156, 95326 (resent copies)",
+"flavor": "",
+"cat": "D · Duplicate",
+"page": "None",
+"section": "Pixel-identical to earlier uploads",
+"orient": "",
+"crops": "",
+"shared": "",
+"thumb": "",
+"hasThumb": false
+}
+];
+class Component extends DCLogic {
+  renderVals() { return { rows: ROWS }; }
+}
+</script>
+</body>
+</html>
